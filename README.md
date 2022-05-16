@@ -1,15 +1,22 @@
 # vue-doughnut-progress
-An animated responsive Circular Progress Bar for Vue (3 and 2)
+An animated responsive Circular Progress Bar for Vue 3
 
 ## Getting started
 1. Install it using npm: npm i vue-doughnut-progress
 2. Import it into your vue file:
 
     ```
-    import VueDoughnutProgress from '@/vue-doughnut-progress.vue';
+    import VueDoughnutProgress from 'vue-doughnut-progress';
+    ```
+3. Register it (Locally or Globally)
+
+    ```
+    components: {
+        VueDoughnutProgress
+    }
     ```
 
-3. Add it to your template with parameters:
+4. Add it to your template with parameters:
     
     ```
     <VueDoughnutProgress

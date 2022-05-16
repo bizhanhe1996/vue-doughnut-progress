@@ -1,7 +1,7 @@
 {
   "name": "vue-doughnut-progress",
-  "version": "1.0.0",
-  "description": "An animated responsive circular progress for Vue (3 and 2)",
+  "version": "1.0.2",
+  "description": "An animated responsive circular progress for Vue 3",
   "main": "dist/vue-doughnut-progress.ssr.js",
   "browser": "dist/vue-doughnut-progress.esm.js",
   "module": "dist/vue-doughnut-progress.esm.js",
