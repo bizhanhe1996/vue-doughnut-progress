@@ -24,7 +24,7 @@
 
 <script>
 import { defineComponent } from 'vue';
-import VueDoughnutProgress from '@/vue-doughnut-progress.vue';
+import VueDoughnutProgress from 'vue-doughnut-progress';
 
 export default defineComponent({
   name: 'ServeDev',
