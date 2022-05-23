@@ -3,6 +3,12 @@
   "version": "1.0.4",
   "description": "An animated responsive circular progress for Vue 3",
   "keywords": ["vue","vue3","progress","circular-progress","doughnut-progress"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bizhanhe1996/vue-doughnut-progress.git"
+  },
+  "license": "MIT",
+  "author": "Bizhan Hejazi",
   "main": "dist/vue-doughnut-progress.ssr.js",
   "browser": "dist/vue-doughnut-progress.esm.js",
   "module": "dist/vue-doughnut-progress.esm.js",

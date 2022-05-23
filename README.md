@@ -7,27 +7,27 @@ A demo of the component is available <a href="https://bz06xb.csb.app/">HERE</a>
 ## Getting started
 1. Install it using npm: npm i vue-doughnut-progress
 2. Import it into your vue file:
-    ```
-    import VueDoughnutProgress from 'vue-doughnut-progress';
-    ```
+```
+import VueDoughnutProgress from 'vue-doughnut-progress';
+```
 3. Register it (Locally or Globally)
-    ```
-    components: {
-        VueDoughnutProgress
-    }
-    ```
+```
+components: {
+    VueDoughnutProgress
+}
+```
 4. Add it to your template with parameters:
-    ```
-    <VueDoughnutProgress
-        size="50"
-        thickness="5"
-        color="red"
-        percent="23"
-        text="test"
-        bold="false"
-        fontSize="14" 
-    />
-    ```
+```
+<VueDoughnutProgress
+    size="50"
+    thickness="5"
+    color="red"
+    percent="23"
+    text="test"
+    bold="false"
+    fontSize="14" 
+/>
+```
     
 ## Parameters
 1. size:            Integer
