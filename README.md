@@ -31,7 +31,7 @@ components: {
     color="red"
     percent="23"
     :text="{
-        text:"<p style="text-align:center">Doughnut<br/>Progress</p>",
+        text:'<p style=`text-align:center`>Doughnut<br/>Progress</p>',
         bold: true,
         size: 14
     }" 
