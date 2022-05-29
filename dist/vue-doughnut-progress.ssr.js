@@ -59,24 +59,18 @@ function _nonIterableRest() {
   name: 'VueDoughnutProgress',
   props: {
     // Doughnut Properties
-    'size': Number,
+    'radius': Number,
     'color': String,
     'thickness': Number,
     'percent': Number,
-    // Text Properties
-    'text': String,
-    'fontSize': Number,
-    'bold': Boolean
+    'text': Object
   },
   computed: {
-    r: function r() {
-      return this.size / 2 - 2;
-    },
     dashoffset: function dashoffset() {
       return this.dasharray - this.dasharray * this.percent / 100;
     },
     dasharray: function dasharray() {
-      return 2 * Math.PI * this.r;
+      return 2 * Math.PI * this.radius;
     }
   }
 };var _hoisted_1 = {
@@ -88,19 +82,19 @@ var _hoisted_4 = ["cx", "cy", "r"];
 var _hoisted_5 = ["innerHTML"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createElementBlock("div", _hoisted_1, [(vue.openBlock(), vue.createElementBlock("svg", {
-    width: $props.size,
-    height: $props.size
+    width: $props.radius * 2,
+    height: $props.radius * 2
   }, [vue.createElementVNode("circle", {
-    cx: $props.size / 2,
-    cy: $props.size / 2,
-    r: $options.r,
+    cx: $props.radius,
+    cy: $props.radius,
+    r: $props.radius,
     style: vue.normalizeStyle({
       'stroke-width': $props.thickness
     })
   }, null, 12, _hoisted_3), vue.createElementVNode("circle", {
-    cx: $props.size / 2,
-    cy: $props.size / 2,
-    r: $options.r,
+    cx: $props.radius,
+    cy: $props.radius,
+    r: $props.radius,
     style: vue.normalizeStyle({
       'stroke-dashoffset': $options.dashoffset,
       'stroke-dasharray': $options.dasharray,
@@ -109,10 +103,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, null, 12, _hoisted_4)], 8, _hoisted_2)), vue.createElementVNode("span", {
     style: vue.normalizeStyle({
-      'font-weight': $props.bold ? 'bold' : 'normal',
-      'font-size': $props.fontSize + 'px'
+      'font-weight': $props.text.bold ? 'bold' : 'normal',
+      'font-size': $props.text.size + 'px'
     }),
-    innerHTML: $props.text
+    innerHTML: $props.text.text
   }, null, 12, _hoisted_5)]);
 }function styleInject(css, ref) {
   if ( ref === void 0 ) ref = {};

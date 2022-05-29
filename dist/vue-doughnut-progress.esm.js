@@ -4,26 +4,19 @@ var script = {
   name: 'VueDoughnutProgress',
   props: {
     // Doughnut Properties
-    'size': Number,
+    'radius': Number,
     'color': String,
     'thickness': Number,
     'percent': Number,
-    // Text Properties
-    'text': String,
-    'fontSize': Number,
-    'bold': Boolean
+    'text': Object
   },
   computed: {
-    r() {
-      return this.size / 2 - 2;
-    },
-
     dashoffset() {
       return this.dasharray - this.dasharray * this.percent / 100;
     },
 
     dasharray() {
-      return 2 * Math.PI * this.r;
+      return 2 * Math.PI * this.radius;
     }
 
   }
@@ -38,19 +31,19 @@ const _hoisted_4 = ["cx", "cy", "r"];
 const _hoisted_5 = ["innerHTML"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", _hoisted_1, [(openBlock(), createElementBlock("svg", {
-    width: $props.size,
-    height: $props.size
+    width: $props.radius * 2,
+    height: $props.radius * 2
   }, [createElementVNode("circle", {
-    cx: $props.size / 2,
-    cy: $props.size / 2,
-    r: $options.r,
+    cx: $props.radius,
+    cy: $props.radius,
+    r: $props.radius,
     style: normalizeStyle({
       'stroke-width': $props.thickness
     })
   }, null, 12, _hoisted_3), createElementVNode("circle", {
-    cx: $props.size / 2,
-    cy: $props.size / 2,
-    r: $options.r,
+    cx: $props.radius,
+    cy: $props.radius,
+    r: $props.radius,
     style: normalizeStyle({
       'stroke-dashoffset': $options.dashoffset,
       'stroke-dasharray': $options.dasharray,
@@ -59,10 +52,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, null, 12, _hoisted_4)], 8, _hoisted_2)), createElementVNode("span", {
     style: normalizeStyle({
-      'font-weight': $props.bold ? 'bold' : 'normal',
-      'font-size': $props.fontSize + 'px'
+      'font-weight': $props.text.bold ? 'bold' : 'normal',
+      'font-size': $props.text.size + 'px'
     }),
-    innerHTML: $props.text
+    innerHTML: $props.text.text
   }, null, 12, _hoisted_5)]);
 }
 

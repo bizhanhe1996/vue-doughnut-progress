@@ -1,20 +1,20 @@
 <template>
   <div class="vue-doughnut-progress">
-    <svg :width="size" :height="size">
+    <svg :width="radius*2" :height="radius*2">
       <!-- Track Circle -->
       <circle 
-        :cx="size/2"
-        :cy="size/2" 
-        :r="r" 
+        :cx="radius"
+        :cy="radius" 
+        :r="radius" 
         :style="{
           'stroke-width':thickness,
         }"  
       />
       <!-- Bar Circle -->
       <circle 
-        :cx="size/2" 
-        :cy="size/2" 
-        :r="r" 
+        :cx="radius" 
+        :cy="radius" 
+        :r="radius" 
         :style="{
           'stroke-dashoffset':dashoffset,
           'stroke-dasharray':dasharray,
@@ -25,10 +25,10 @@
     </svg>
     <!-- Test Inside Circle -->
     <span :style="{
-      'font-weight':bold?'bold':'normal',
-      'font-size':fontSize+'px'
+      'font-weight':text.bold?'bold':'normal',
+      'font-size':text.size+'px'
       }" 
-      v-html="text"
+      v-html="text.text"
     ></span>
   </div>
 </template>
@@ -38,24 +38,18 @@ export default {
   name: 'VueDoughnutProgress',
   props: {
     // Doughnut Properties
-    'size': Number,
+    'radius': Number,
     'color': String,
     'thickness': Number,
     'percent': Number,
-    // Text Properties
-    'text': String,
-    'fontSize': Number,
-    'bold': Boolean,
+    'text': Object,
   }, 
   computed: {
-    r() {
-      return (this.size / 2) - 2
-    },
     dashoffset() {
       return this.dasharray - (this.dasharray*this.percent/100);
     },
     dasharray() {
-      return 2 * Math.PI * this.r
+      return 2 * Math.PI * this.radius
     }
   }
 }
